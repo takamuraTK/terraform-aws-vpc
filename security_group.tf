@@ -5,10 +5,10 @@ resource "aws_security_group" "example" {
 
 resource "aws_security_group_rule" "ingress" {
   type = "ingress"
-  from_port = var.port
-  to_port = var.port
+  from_port = var.sg_port
+  to_port = var.sg_port
   protocol = "tcp"
-  cidr_blocks = var.cidr_blocks
+  cidr_blocks = var.sg_cidr_blocks
   security_group_id = aws_security_group.example.id
 }
 
